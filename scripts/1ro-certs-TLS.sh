@@ -35,7 +35,7 @@ echo -e "${VERDE}✔ Listo: certs/servercert.pem${NC}"
 # 2. Generar para el Subdominio WWW
 echo "Creando par para: $DOMINIO_WWW"
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-  -keyout ./certs/keypriv.key \
+  -keyout ./certs/privkey.key \
   -out ./certs/cert-tls.crt \
   -subj "/C=$PAIS/ST=$ESTADO/L=$CIUDAD/O=$ORGANIZACION/OU=$UNIDAD/CN=$DOMINIO_WWW" \
   -addext "subjectAltName=DNS:$DOMINIO_WWW,DNS:localhost,IP:127.0.0.1"

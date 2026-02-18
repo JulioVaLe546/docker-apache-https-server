@@ -28,8 +28,8 @@ RUN sed -i \
 # Corregimos el archivo httpd-ssl.conf para que apunte a TUS certificados
 # en lugar de buscar los "server.crt" que no existen.
 RUN sed -i \
-    -e 's|/usr/local/apache2/conf/server.crt|/usr/local/apache2/conf/certs/servercert.pem|g' \
-    -e 's|/usr/local/apache2/conf/server.key|/usr/local/apache2/conf/certs/serverkey.pem|g' \
+    -e 's|/usr/local/apache2/conf/server.crt|/usr/local/apache2/conf/certs/servercert.crt|g' \
+    -e 's|/usr/local/apache2/conf/server.key|/usr/local/apache2/conf/certs/serverkey.key|g' \
     conf/extra/httpd-ssl.conf
 # --------------------------
 

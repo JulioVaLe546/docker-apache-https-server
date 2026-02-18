@@ -1,0 +1,16 @@
+# Ignorar certificados y llaves privadas (Seguridad)
+certs/*
+*.key
+*.pem
+*.crt
+
+# ¡EXCEPCIÓN! No ignorar el archivo .gitkeep (para mantener la carpeta)
+!certs/.gitkeep
+
+# Ignorar logs del sistema (Limpieza)
+logs/
+*.pid
+*.log
+
+# Ignorar archivos del sistema operativo
+.DS_Store

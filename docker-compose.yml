@@ -1,0 +1,31 @@
+services:
+  webserver:
+    build: .
+    container_name: apache-custom
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Persistencia: Si editas archivos en tu carpeta local 'www', cambian en el server
+      - ./www:/usr/local/apache2/htdocs
+      # Logs accesibles desde fuera
+      - ./logs:/usr/local/apache2/logs
+      # Sincronización con la carpeta de config
+      - ./config/vhosts:/usr/local/apache2/conf/extra/vhosts
+    networks:
+      - mi-red-segura
+    depends_on:
+      - php-fpm
+
+  # Servicio necesario para procesar tus archivos .php (login.php, index.php)
+  php-fpm:
+    image: php:8.2-fpm
+    container_name: php-backend
+    volumes:
+      - ./www:/usr/local/apache2/htdocs
+    networks:
+      - mi-red-segura
+
+networks:
+  mi-red-segura:
+    driver: bridge

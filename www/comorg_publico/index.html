@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committed Organization - Transformamos realidades con tecnología</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            font-style: italic;
+            color: #2fb5a8;
+            font-size: 14px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 50px;
+            max-width: 1400px;
+	    min-height: 60px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2fb5a8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2fb5a8;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #269b8f;
+            transform: translateY(-2px);
+        }
+
+        /* Secciones */
+        section {
+            padding: 80px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #2fb5a8;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Sobre Nosotros */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #2fb5a8;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-box h4 {
+            color: #2fb5a8;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: #2fb5a8;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Propósito */
+        .purpose {
+            background: linear-gradient(135deg, #2fb5a8 0%, #1a8a7f 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .purpose h2 {
+            color: white;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .purpose-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .purpose-item p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Valores */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .value-card h3 {
+            color: #2fb5a8;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #2fb5a8;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .about-content,
+            .services-grid,
+            .purpose-grid,
+            .values-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            "Transformamos realidades con tecnología y compromiso"
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="committed_organization_logo.jpeg" alt="Committed Organization Logo">
+            </div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proposito">Propósito</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Convertimos a Mipymes y ONGs en organizaciones más valiosas</h1>
+            <p>Somos una organización internacional que promueve la transformación digital</p>
+            <a href="#servicios" class="btn">Conoce Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="about" id="nosotros">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>🌐 Organización Internacional</h3>
+                <p>Somos una organización internacional, liderada por jóvenes profesionales y estudiantes que promueve la <strong>transformación digital</strong> en MIPYMEs y ONGs.</p>
+                
+                <p>Ayudamos a organizaciones y personas a generar valor y aumentar su competitividad e impacto social a través de la tecnología.</p>
+                
+                <p>Nuestros miembros provienen de <strong>+25 Universidades e Institutos</strong> de países como Perú, Colombia, Argentina, República Dominicana, Italia y más.</p>
+                
+                <p>Nos apoyamos de un <strong>Comité de Asesores expertos</strong>: Gerentes, CEOs y Consultores Senior de grandes empresas corporativas de Argentina, Perú y LATAM.</p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h4>+25</h4>
+                    <p>Universidades</p>
+                </div>
+                <div class="stat-box">
+                    <h4>5+</h4>
+                    <p>Países</p>
+                </div>
+                <div class="stat-box">
+                    <h4>100+</h4>
+                    <p>Miembros</p>
+                </div>
+                <div class="stat-box">
+                    <h4>50+</h4>
+                    <p>Proyectos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <p class="section-subtitle">Lo que ofrecemos</p>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Planeamiento Estratégico</h3>
+                <p>Desarrollamos estrategias personalizadas para impulsar el crecimiento y la competitividad de tu organización.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Transformación Digital</h3>
+                <p>Acompañamos a tu organización en el proceso de adopción de tecnologías que optimicen sus procesos y resultados.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Soluciones Tecnológicas</h3>
+                <p>Creamos software y herramientas tecnológicas adaptadas a las necesidades específicas de tu negocio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propósito -->
+    <section class="purpose" id="proposito">
+        <h2 class="section-title">Nuestro Propósito</h2>
+        <div class="purpose-grid">
+            <div class="purpose-item">
+                <h3>🎯 Propósito</h3>
+                <p>Convertimos a Mipymes y ONGs en organizaciones más valiosas</p>
+            </div>
+            
+            <div class="purpose-item">
+                <h3>🔭 Visión</h3>
+                <p>Ser la principal ONG que impulse el desarrollo económico y social de Latinoamérica a través de la tecnología</p>
+            </div>
+            
+            <div class="purpose-item">
+                <h3>✨ Misión</h3>
+                <p>Promovemos la transformación digital en Mipymes y ONGs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section id="valores">
+        <p class="section-subtitle">Lo que nos define</p>
+        <h2 class="section-title">Nuestros Valores</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>🤝 Compromiso</h3>
+                <p>Nos dedicamos completamente a cada proyecto, asegurando resultados de excelencia para nuestros clientes.</p>
+            </div>
+            
+            <div class="value-card">
+                <h3>💡 Innovación</h3>
+                <p>Buscamos constantemente nuevas soluciones y tecnologías para resolver los desafíos de nuestros clientes.</p>
+            </div>
+            
+            <div class="value-card">
+                <h3>🔄 Adaptabilidad</h3>
+                <p>Nos ajustamos rápidamente a los cambios del mercado y las necesidades específicas de cada organización.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Committed Organization</h3>
+                <p>Transformamos realidades con tecnología y compromiso</p>
+                <p><strong>Sector:</strong> Tecnología, información e internet</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Especialidades</h3>
+                <ul>
+                    <li>Tecnología</li>
+                    <li>Transformación Digital</li>
+                    <li>Planeamiento Estratégico</li>
+                    <li>Software</li>
+                    <li>Organizaciones sin fines de lucro</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 soporte@committedorganization.com</p>
+                <p>🌐 committedorganization.org</p>
+                <p>📍 Presencia en LATAM e Italia</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Committed Organization. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -6,7 +6,7 @@ ROJO='\033[0;31m'
 AMARILLO='\033[1;33m'
 NC='\033[0m'
 
-IFACE = $(ip route get 8.8.8.8 | awk '{print $5}')
+IFACE=$(ip route get 8.8.8.8 | awk '{print $5}')
 
 # ==========================================
 # FUNCIÓN: DETENER (LIMPIEZA SEGURA)

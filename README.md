@@ -1,4 +1,4 @@
-# Secure Dockerized Web Infrastructure: Apache/PHP with Automated TLS, Local DNS & Dynamic iptables Firewall
+# Secure Dockerized Web Infrastructure: Apache/PHP with Automated TLS, Local DNS & iptables Firewall
 
 Este proyecto despliega un servidor web Apache HTTPS seguro utilizando Docker y Docker Compose. Incluye automatización completa mediante scripts en Bash para la generación de certificados TLS/SSL autofirmados, resolución local de DNS y un firewall dinámico basado en `iptables` diseñado para proteger los contenedores.
 

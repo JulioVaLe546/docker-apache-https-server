@@ -26,19 +26,19 @@ Sigue este orden estricto para levantar el entorno de forma segura.
 
 ### 1. Generar los certificados TLS
 Este script creará los certificados autofirmados .crt y .pem en la carpeta certs/.
-bash Scripts/1ro-certs-TLS.sh
+`bash scripts/1ro-certs-TLS.sh`
 
 ### 2. Configurar la Resolución DNS Local
 Temporalmente en el archivo /etc/hosts.
-sudo bash Scripts/2do-setup-dns.sh
+`sudo bash scripts/2do-setup-dns.sh`
 
 ### 3. Iptables de DOCKER-USER
 Se carga antes las reglas de iptables antes de levantar los servicios web. El script detectará la interfaz de red automáticamente.
-sudo bash Scripts/3ro-iptables-docker-start-stop.sh start
+`sudo bash scripts/3ro-iptables-docker-start-stop.sh start`
 
 ### 4. Desplegar Docker
 Con estos scripts ejecutandose se procede a construir y levantar los contenedores en segundo plano.
-docker compose up -d --build
+`docker compose up -d --build`
 
 ### 5. Probar el acceso
 Abre tu navegador web y comprueba las dos paginas web:

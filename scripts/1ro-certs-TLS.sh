@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================
-# CONFIGURACIÓN DEL USUARIO (EDITA ESTO)
+# CONFIGURACIÓN DEL USUARIO
 # ==========================================
 DOMINIO_PRINCIPAL="committedorganization.org"
 DOMINIO_WWW="www.committedorganization.org"
